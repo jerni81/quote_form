@@ -1,16 +1,19 @@
 import React from "react";
 import QtButton from "./Main/QtButton";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
+import Form from "./Main/Form";
 
 function Main() {
   return (
-    <Router>
-      <div className="main">
-        <Link to="/form">
-          <QtButton />
-        </Link>
-      </div>
-    </Router>
+    <div className="main">
+      <Switch>
+        <Route exact path="/" component={QtButton} />
+        <Route path="/form" component={Form} />
+      </Switch>
+      {/* <Link to="/form">
+        <QtButton />
+      </Link> */}
+    </div>
   );
 }
 
