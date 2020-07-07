@@ -17,13 +17,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Form3() {
+export default function Form3(props) {
   const classes = useStyles();
-  // const [age, setAge] = React.useState('');
+  const [terms, setTerms] = useState({});
 
-  // const handleChange = (event) => {
-  //   setAge(event.target.value);
-  // };
+  const handleChange = (event) => {
+    props.setQuote({ ...props.quote, terms });
+  };
+  console.log("form3 quote", props.quote);
 
   return (
     <div className="form">
@@ -32,8 +33,11 @@ export default function Form3() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          // value={age}
-          // onChange={handleChange}
+          value={terms.months}
+          onChange={(event) => {
+            event.preventDefault();
+            setTerms({ ...terms, months: event.target.vaule });
+          }}
         >
           <MenuItem value={1}>1</MenuItem>
           <MenuItem value={2}>2</MenuItem>
@@ -54,8 +58,11 @@ export default function Form3() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          // value={age}
-          // onChange={handleChange}
+          value={terms.percent}
+          onChange={(event) => {
+            event.preventDefault();
+            setTerms({ ...terms, percent: event.target.vaule });
+          }}
         >
           <MenuItem value={50}>50%</MenuItem>
           <MenuItem value={75}>75%</MenuItem>
@@ -63,7 +70,7 @@ export default function Form3() {
         </Select>
       </FormControl>
       <Link to="/quote">
-        <Button variant="contained">
+        <Button variant="contained" onClick={handleChange}>
           <Typography
             variant="headline"
             className={classes.title}

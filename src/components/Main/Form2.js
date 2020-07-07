@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextField, Button, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -11,8 +12,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Form2() {
+export default function Form2(props) {
   const classes = useStyles();
+  const [profits, setProfits] = useState({
+    year1: null,
+    year2: null,
+    year3: null,
+  });
+
+  const handleChange = (event) => {
+    props.setQuote({ ...props.quote, profits });
+  };
 
   return (
     <form
@@ -23,25 +33,33 @@ export default function Form2() {
     >
       <TextField
         id="standard-basic"
-        defaultValue="$"
         className="formField"
         label="Year 1 Profit"
         variant="filled"
+        onChange={(event) =>
+          setProfits({ ...profits, year1: event.target.value })
+        }
       />
       <TextField
         id="standard-basic"
         className="formField"
         label="Year 2 Profit"
         variant="filled"
+        onChange={(event) =>
+          setProfits({ ...profits, year2: event.target.value })
+        }
       />
       <TextField
         id="standard-basic"
         className="formField"
         label="Year 3 Profit"
         variant="filled"
+        onChange={(event) =>
+          setProfits({ ...profits, year2: event.target.value })
+        }
       />
       <Link to="/form3">
-        <Button variant="contained">
+        <Button variant="contained" onClick={handleChange}>
           <Typography
             variant="headline"
             className={classes.title}
