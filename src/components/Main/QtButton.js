@@ -16,18 +16,21 @@ export default function QtButton() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Link to="/form">
-        <Button variant="contained">
-          <Typography
-            variant="headline"
-            className={classes.title}
-            align="center"
-          >
-            Get Quote Now!
-          </Typography>
-        </Button>
-      </Link>
+    <div className="main">
+      <h3>B.I.I. insurance you didn't know you needed</h3>
+      <div className={classes.root}>
+        <Link to="/form">
+          <Button variant="contained" className="button">
+            <Typography
+              variant="headline"
+              className={classes.title}
+              align="center"
+            >
+              Get Quote Now!
+            </Typography>
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }

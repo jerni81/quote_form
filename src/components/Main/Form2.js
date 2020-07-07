@@ -33,6 +33,7 @@ export default function Form2(props) {
     >
       <TextField
         id="standard-basic"
+        type="number"
         className="formField"
         label="Year 1 Profit"
         variant="filled"
@@ -42,6 +43,7 @@ export default function Form2(props) {
       />
       <TextField
         id="standard-basic"
+        type="number"
         className="formField"
         label="Year 2 Profit"
         variant="filled"
@@ -51,15 +53,16 @@ export default function Form2(props) {
       />
       <TextField
         id="standard-basic"
+        type="number"
         className="formField"
         label="Year 3 Profit"
         variant="filled"
         onChange={(event) =>
-          setProfits({ ...profits, year2: event.target.value })
+          setProfits({ ...profits, year3: event.target.value })
         }
       />
       <Link to="/form3">
-        <Button variant="contained" onClick={handleChange}>
+        <Button variant="contained" onClick={handleChange} className="button">
           <Typography
             variant="headline"
             className={classes.title}

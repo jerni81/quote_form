@@ -32,7 +32,12 @@ function Main() {
             <Form3 {...props} setQuote={setQuote} quote={quote} />
           )}
         />
-        <Route path="/quote" component={Quote} />
+        <Route
+          path="/quote"
+          render={(props) => (
+            <Quote {...props} setQuote={setQuote} quote={quote} />
+          )}
+        />
       </Switch>
     </div>
   );

@@ -49,7 +49,7 @@ export default function Form(props) {
         onChange={(event) => setName({ ...names, bName: event.target.value })}
       />
       <Link to="/form2">
-        <Button variant="contained" onClick={handleChange}>
+        <Button variant="contained" onClick={handleChange} className="button">
           <Typography
             variant="headline"
             className={classes.title}

@@ -2,7 +2,7 @@
   height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -25,5 +25,18 @@
   height: 10vh;
   position: fixed;
   bottom: 0;
+  border: 1px solid black;
+}
+
+.button {
+  margin: 20px;
+}
+
+.quoteReceipt {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 40vw;
+  height: 40vh;
   border: 1px solid black;
 }

@@ -36,7 +36,7 @@ export default function Form3(props) {
           value={terms.months}
           onChange={(event) => {
             event.preventDefault();
-            setTerms({ ...terms, months: event.target.vaule });
+            setTerms({ ...terms, months: event.target.value });
           }}
         >
           <MenuItem value={1}>1</MenuItem>
@@ -61,16 +61,16 @@ export default function Form3(props) {
           value={terms.percent}
           onChange={(event) => {
             event.preventDefault();
-            setTerms({ ...terms, percent: event.target.vaule });
+            setTerms({ ...terms, percent: event.target.value });
           }}
         >
-          <MenuItem value={50}>50%</MenuItem>
-          <MenuItem value={75}>75%</MenuItem>
+          <MenuItem value={0.5}>50%</MenuItem>
+          <MenuItem value={0.75}>75%</MenuItem>
           <MenuItem value={100}>100%</MenuItem>
         </Select>
       </FormControl>
       <Link to="/quote">
-        <Button variant="contained" onClick={handleChange}>
+        <Button variant="contained" onClick={handleChange} className="button">
           <Typography
             variant="headline"
             className={classes.title}
