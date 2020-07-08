@@ -35,8 +35,8 @@
 .quoteReceipt {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
+  align-items: flex-start;
   width: 40vw;
   height: 40vh;
-  border: 1px solid black;
 }

@@ -66,7 +66,7 @@ export default function Form3(props) {
         >
           <MenuItem value={0.5}>50%</MenuItem>
           <MenuItem value={0.75}>75%</MenuItem>
-          <MenuItem value={100}>100%</MenuItem>
+          <MenuItem value={1}>100%</MenuItem>
         </Select>
       </FormControl>
       <Link to="/quote">
