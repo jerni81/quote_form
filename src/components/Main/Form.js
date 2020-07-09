@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextField, Button, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -22,8 +23,7 @@ export default function Form(props) {
 
   return (
     <form
-      className={classes.root}
-      className="form"
+      className={`form ${classes.root}`}
       noValidate
       autoComplete="off"
     >

@@ -5,6 +5,7 @@ import Form from "./Main/Form";
 import Form2 from "./Main/Form2";
 import Form3 from "./Main/Form3";
 import Quote from "./Main/Quote";
+import Wizard from './Form';
 
 function Main() {
   const [quote, setQuote] = useState({});
@@ -33,6 +34,8 @@ function Main() {
           )}
         />
         <Route path="/quote" component={Quote} />
+
+        <Route exact path="/wizard" component={Wizard} />
       </Switch>
     </div>
   );
